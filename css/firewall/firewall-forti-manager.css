@@ -1,0 +1,1963 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400&family=Noto+Kufi+Arabic:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500&display=swap');
+
+:root{
+
+--hue-color : 10;
+
+
+--header-height:3rem;
+--first-color :rgb(44, 208, 178);
+--first-color-second :rgb(0, 131, 106) ;
+--first-color-alt:rgb(3, 88, 106) ;
+--titel-color: rgb(var(--hue-color), 131, 60);
+--text-color:rgb(0, 0, 0);
+--text-color-light:rgb(0, 131, 106);
+--input-color: ;
+--body-color:hsl(190, 100%, 99%);
+--white-color:#fff;
+--scroll-bar-color: ;
+--scroll-thumb-color: ;
+
+
+
+
+--body-font: 'IBM Plex Sans Arabic', sans-serif;
+--title-font: 'IBM Plex Sans Arabic', sans-serif;
+--biggest-font-size:2.5rem;
+--h1-font-size:1.5rem;
+--h2-font-size:1.25rem;
+--h3-font-size:1rem;
+--normal-font-size:.938rem;
+--small-font-size:.813rem;
+--smaller-font-size:.75rem;
+
+
+
+
+--font-medium:500;
+--font-semi-bold:600;
+
+
+
+
+--mb-0-25:.25rem;
+--md-0-5:.5rem;
+--mb-0-75:.75rem;
+--mb-1:1rem;
+--mb-1-25:1.25rem;
+--mb-1-5:.1.5rem;
+--mb-2:2rem;
+--mb-2-5:2.5rem;
+
+
+--z-tooltip:10;
+--z-fixed:100;
+
+
+
+}
+
+
+@media screen and (min-width: 968px) {
+:root{
+
+--biggest-font-size:4rem;
+--h1-font-size:2.25rem;
+--h2-font-size:1.75rem;
+--h3--font-size:1.25rem;
+--normal-font-size:1rem;
+--small-font-size:.875rem;
+--smaller-font-size:.813rem;
+
+
+
+
+
+}
+}
+
+
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+html{
+scroll-behavior: smooth;
+overflow-x: hidden;
+width: 100%;
+}
+
+body{
+margin: var(--header-height) 0 0 0 ;
+font-family: var(--body-font);
+font-size: var(--normal-font-size);
+background-color: var(--body-color);
+color: var(--text-color);
+}
+
+
+h2,h3{
+color: var(--titel-color);
+font-weight: var(--font-medium);
+font-family: var(--title-font);
+}
+h1{
+color: #0076ce;
+font-weight: var(--font-medium);
+font-family: var(--title-font);
+
+}
+
+ul{
+list-style: none;
+}
+
+
+a{
+text-decoration: none;
+}
+
+
+
+img,video{
+
+}
+
+
+
+
+input,button{
+border: none;
+font-family: var(--body-font);
+font-size: var(--normal-font-size);
+}
+
+button{
+
+cursor: pointer;
+
+}
+
+
+
+input{
+outline: none;
+}
+
+.section{
+padding:  0 2.5rem;
+
+}
+
+
+.section__title{
+font-size: var(--h2-font-size);
+color: var(--titel-color);
+text-align: center;
+text-transform: capitalize;
+margin-bottom: var(--mb-2);
+
+}
+
+
+
+.container{
+max-width: 968px;
+margin-left: var(--mb-1);
+margin-right: var(--mb-1);
+}
+
+
+
+.grid{
+display: grid;
+grid:1.5rem ;
+}
+
+
+.header{
+top: 0;
+left: 0;
+width: 100%;
+position: fixed;
+z-index: var(--z-fixed);
+background-color: transparent;
+}
+
+.nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 70px;
+}
+
+
+.nav__logo,
+.nav__toggel{
+color: var(--white-color);
+}
+
+
+.nav__logo{
+font-weight:var(--font-semi-bold);
+font-size: 40px;
+}
+
+.nav__toggel{
+font-size: 1.2rem;
+cursor: pointer;
+}
+
+@media  screen and (min-width: 767px) {
+
+
+
+
+
+.nav__item{
+    color: #fff;
+    
+}
+
+.container{
+max-width: calc(968px + 200px);
+
+}
+
+}
+
+.nav__menu{
+position: relative;
+width: 400px;
+}
+
+
+
+@media screen and (max-width:767px ) {
+
+
+ .nav__link{
+color: var(--text-color-light);
+font-weight: var(--font-semi-bold);
+text-transform: uppercase;
+}
+.nav__link:hover{
+color: var(--text-color);
+}
+
+
+
+    .nav__menu{
+position: fixed;
+background-color:var(--body-color) ;
+top:0;
+right:-100%;
+height: 100%;
+width: 70%;
+box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, .15 );
+transition: .4s;
+padding: 3rem;
+
+}
+}
+
+
+.nav__list{
+display: flex;
+flex-direction: column;
+row-gap: 2.5rem;
+}
+
+@media screen and (min-width: 767px) {
+.nav__menu{
+display: flex;
+column-gap: 1rem;
+}
+
+.nav__list{
+
+flex-direction: row;
+column-gap: 5rem;
+
+}
+
+
+
+.nav__close{
+display: none;
+}
+
+.nav__toggle{
+display: none;
+
+}
+
+.nav__link{
+color: #fff;
+font-weight: var(--font-semi-bold);
+        text-transform: uppercase;
+transition: .4s;
+    }
+
+.nav__link-1{
+width: 50px;
+
+
+}
+
+
+.nav__link:hover{
+    color: var(--text-color);
+    } 
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.nav__close{
+position: absolute;
+top: 1rem;
+right: 2rem;
+cursor: pointer;
+font-size: 1.5rem;
+color: rgb(0, 131, 106);
+
+}
+
+.show-menu{
+right: 0;
+}
+ 
+
+.home__img{
+position: absolute;
+height: 100vh;
+width: 100%;
+object-fit: cover;
+top: 0;
+left: 0;
+}
+
+
+
+.caption__background{
+height: calc(100vh - 50px);
+width: 100%;
+margin-bottom: 20px;
+color: rgb(2, 1, 1);
+position: relative;
+font-size: 50px;
+}
+
+
+span{
+font-weight: 400;
+font-family: var(--body-font);
+font-size: large;
+}
+
+
+
+
+.home__container{
+position: relative;
+height: calc(100vh - var(--header-height));
+}
+
+
+
+
+
+.it__h1{
+font-size: 200px;
+
+}
+
+
+
+
+.home__data-subtitle{
+position: absolute;
+top: 230px;
+}
+
+
+
+
+.scroll__header{
+background-color: var(--body-color);
+box-shadow: 0 0 4px hsla(var(--hue-color), 64%, .15 );
+}
+
+.scroll__header .nav__logo,
+.scroll__header .nav__toggel{
+color: var(--titel-color);
+
+}
+
+.scroll__header .nav__link{
+color: var(--titel-color);
+
+}
+
+
+.section__wrapper{
+max-width: 1220px;
+position: relative;
+margin: 0 auto;
+min-height: 100vh;
+}
+
+@media screen and (min-width: 767px) {
+.grid{
+
+row-gap: 20px;
+grid-template-columns: repeat(3, auto);
+
+}
+
+}
+
+.data__img{
+border: 1px solid var(--titel-color);
+width: 100%;
+height: 340px;
+margin-bottom: 20px;
+transition: all 0.5s;
+}
+
+.data__img:hover{
+box-shadow: 10px 10px  5px 5px var(--text-color-light) ;
+
+
+}
+
+.data__about{
+display: flex;
+padding: 20px 30px;
+row-gap: 30px;
+flex-direction: column;
+}
+
+
+.data__title {
+margin-top: 5px;
+display: grid;
+}
+
+
+
+.footer{
+background-image: linear-gradient(to bottom, #00836a, #009c87, #00b5a7, #01cec8, #12e8eb);
+width: 100%;
+bottom: 0;
+position: relative;
+padding: 20px 10px;
+}
+
+.footer__data-ul li{
+list-style: none;
+
+}
+
+.footer__data-aside{
+width: 100%;
+height:200px;
+padding: 5px 20px;
+display: flex;
+justify-content: center;
+
+}
+.footer__data-aside img{
+width:100% ;
+height: 100%;
+position: relative;
+}
+
+
+
+button{
+border: 1px solid rgb(0, 131, 106)  ;
+width: 100%;
+height: 40px ;
+background-color:rgb(0, 131, 106)  ;
+transition: .4s;
+box-shadow: 20px;
+
+}
+
+
+button:hover{
+    background-color: #fff;
+    box-shadow: 20px;
+    }
+
+
+
+
+button:hover a{
+color: rgb(0, 131, 106);
+box-shadow: 20px;
+}
+
+
+button a{
+margin-left: auto;
+margin-right: auto;
+color: #fff;
+}
+
+button{
+margin-top: 20px;
+margin-bottom: 20px;
+
+}
+
+
+
+@media screen and (min-width: 767px) {
+    .footer__data-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    
+
+
+}
+
+
+.name{
+background-color: rgb(44, 208, 178);
+width: 2px;
+height: 100%;
+}
+
+
+@media screen and (max-width: 767px) {
+.footer__data-ul{
+display: grid;
+grid-template-columns: max-content;
+row-gap: 30px;
+padding-left: 20 px;
+margin: 20px 30px;
+}
+
+
+}
+
+
+
+/* ====================== SERVICE PAGE ======================*/
+
+
+.service{
+width: 100%;
+min-height: 91vh ;
+}
+
+
+
+
+
+
+
+
+.all__data-service{
+padding: 0px 20px;
+
+}
+
+
+
+.data__service{
+display: grid;
+grid-template-columns: auto auto;
+gap: 15px;
+padding: 0px 50px;
+
+}
+
+
+
+
+
+@media screen and (max-width : 767px){
+
+    .data__service{
+display: grid;
+gap: 15px;
+padding: 0px 28px;
+row-gap: 30px;
+grid-template-columns: auto;
+
+}
+
+
+.all__card-service{
+display: flex;
+flex-direction: column;
+row-gap: 20px;
+}
+
+
+}
+
+
+
+
+
+
+
+.card__service{
+width: 300px; ;
+height: 200px;
+border: 1px solid  rgb(3, 88, 106);
+position: relative;
+box-shadow: 5px 5px 1px 2px rgb(0, 131, 106);
+}
+
+
+
+
+
+.card__data{
+padding: 10px 10px;
+list-style: circle;
+margin-left: 20px;
+}
+
+
+
+
+@media screen and (min-width : 767px){
+
+    .all__card-service{
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        }
+        
+
+}
+
+
+/*===================          CONTENT FORM           ======================= */
+
+.content{
+min-height: 90vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+.all__content-form{
+width:500px;
+min-height: 550px;
+}
+
+
+
+.input{
+position: relative;
+border: 1px solid rgb(0, 131, 106);
+width: 100px;
+height: 40px;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+
+.content__form{
+width: 100%;
+height: 100%;
+}
+
+
+span{
+width: 100%;
+position: relative;
+}
+
+
+/* =============================     NAV LINK DROP     =============================*/
+
+
+@media screen and (min-width: 767px){
+
+
+.nav__link-antivirus{
+position: absolute;
+background-color: var(--first-color-second);
+width: fit-content;
+height: fit-content;
+margin-top: 240px;
+border-radius: 5px;
+
+}
+
+.nav__link-antivirus li{
+justify-content: end;
+display: flex;
+flex-direction: row;
+padding: 20px 20px;
+
+}
+
+.nav__link-antivirus{
+right: 100px;
+display:flex ;
+flex-direction: column;
+opacity: 0;
+transition: all 1s ease;
+visibility: hidden;
+}
+
+
+.nav__link-antivirus-drop1{
+position: absolute;
+background-color: var(--first-color-second);
+top: 0;
+width: 130px;
+height: fit-content;
+transition: all 0.2s;
+margin-right:175px;
+border-radius:5px ;
+opacity: 1;
+visibility: hidden;
+}
+
+
+
+.nav__link-antivirus-drop2{
+    position: absolute;
+    background-color: var(--first-color-second);
+    top: 0;
+    width: 130px;
+    height: fit-content;
+    transition: all 0.9s ease;
+    margin-right:175px;
+    border-radius:5px ;
+    opacity:1;
+    visibility: hidden;
+    }
+
+
+    .nav__list{
+        height: 46px;
+        align-items: center;
+        }
+        
+        
+        .nav__item{
+            height: 46px;
+        align-items: center;
+        display: flex;
+        }
+
+
+}
+
+.navlinkdropdown{
+display: flex;
+opacity: 1;
+}
+
+/* =================================    caption img and header  ===================================*/
+
+
+
+
+@media screen and(max-width : 767px){
+.nav__img-left{
+
+display: none;
+
+}
+
+.nav__logo img{
+
+display: none;
+
+}
+
+
+}
+
+@media screen and (max-width : 767px){
+    .nav__img-left{
+        max-width: 160px;
+        max-height: 80px;
+        top: 7px;
+        position: relative;
+        left: 100px;
+        }
+}
+
+
+@media screen and (min-width : 767px){
+
+.nav__img-left{
+max-width: 160px;
+max-height: 80px;
+top: 7px;
+position: relative;
+left: 100px;
+}
+
+
+
+
+
+
+.caption__background h1{
+left: 100px;
+top: 100px;
+position: relative;
+font-weight: 900;
+}
+
+.caption__background h2{
+font-size: 50px;
+top: 90px;
+left: 110px;
+font-weight: 400;
+position: relative;
+}
+
+}
+
+
+
+
+.data__about-antivirus{
+height: fit-content;
+height: fit-content;
+
+
+
+}
+
+
+/* ==========================================              ==========================================*/
+
+
+.data__services{
+font-size: 40px;
+width: 100%;
+height: 70px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 900;
+margin-top: 60px;
+}
+
+
+
+/*  ==========================================              ==========================================*/
+
+
+.data__img{
+border-radius: 10px;
+padding: 10px 5px;
+}
+
+
+.data__img img{
+
+width: 100%;
+height: 300px;
+}
+
+
+
+
+/*  ============================================  SERVICES CARD  ================================================*/
+
+
+
+
+
+
+.card__service img{
+width: 298px;
+height: 197px;
+object-fit: cover;
+transition: 0.5s all;
+}
+
+.card__service{
+padding: 0px 0px;
+overflow: hidden;
+}
+
+
+
+.card__service:hover img{
+
+transform: scale(1.5);
+
+}
+
+
+
+.card__Services-img{
+position: relative;
+top: 40px;
+
+}
+
+
+.card__services-img2{
+position: absolute;
+width: 100px;
+height: 20px;
+object-fit: fill;
+}
+
+
+/*  ====================================     ABOUT US    ====================================  */
+
+
+
+@media screen and (max-width: 767px){
+
+.about__us-section{
+weight: 80vh;
+display: flex;
+flex-direction:column ;
+row-gap: 10px;
+justify-content: space-around;
+}
+
+
+}
+
+
+
+.about__us-section{
+min-height: 70vh;
+display: flex;
+flex-direction: row;
+column-gap: 10px;
+padding: 0 20px;
+margin-top: 75px;
+font-weight: 500;
+margin-bottom: 20px;
+justify-content: space-between;
+}
+
+@media screen and (max-width: 767px){
+    .about__us-section{
+flex-direction: column;
+justify-content: space-around;
+    }
+
+
+}
+
+.container__about-img{
+width: 100%;
+height: 400px;
+background-image: url(/assets/img/Kasper\ \(7\).jpg);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+border: 1px solid var(--text-color-light);
+background-position: center;
+align-items: center;
+position: relative;
+left: 0;
+}
+
+.container__about{
+align-items: center;
+display: flex;
+flex-direction: column;
+row-gap: 28px;
+width: fit-content;
+}
+
+
+
+
+.herf__about-us{
+border: 1px solid var(--first-color-second);
+background-color: var(--first-color-second);
+text-decoration: none;
+color: #fff;
+text-align: center;
+padding: 15px;
+transition: 0.4s all;
+width: 200px;
+height: 60px;
+margin-bottom: 30px;
+}
+
+.herf__about-us:hover{
+background-color:white;
+
+}
+
+
+.herf__about-us {
+text-decoration: none;
+color: #fff;
+}
+
+.herf__about-us:hover {
+color: var(--first-color-second);
+
+}
+
+@media screen and (max-width: 767px){
+    .nav__img-left{
+    
+    display: none;
+    
+    }
+    
+
+    
+    
+}
+
+
+
+/*  ===================================================  KASPERSKY HTML CSS  =====================================================*/
+
+
+
+
+.kaspersky__container{
+display: flex;
+align-items: flex-start;
+width: 100%;
+min-height: 100vh;
+padding: 10px 50px;
+flex-direction: column;
+row-gap: 30px;
+}
+
+@media screen and (min-width: 900px){
+    
+
+.con__mahsolat-kaspersky{
+
+display: grid;
+grid-template-columns: 400px 400px 400px;
+row-gap: 30px;
+column-gap: 30px;
+width: 100%;
+height: 100%;
+justify-content: center;
+}
+
+
+}
+
+
+@media screen and (max-width: 1266px){
+
+.con__mahsolat-kaspersky{
+
+display: grid;
+grid-template-columns: 400px 400px ;
+row-gap: 30px;
+column-gap: 30px;
+width: 100%;
+height: 100%;
+justify-content: center;
+}
+
+
+}
+
+
+@media screen and (max-width: 835px){
+
+.con__mahsolat-kaspersky{
+
+display: grid;
+grid-template-columns: 400px  ;
+row-gap: 30px;
+column-gap: 30px;
+width: 100%;
+height: 100%;
+justify-content: center;
+}
+
+
+}
+
+@media screen and (max-width: 835px){
+
+.con__mahsolat-kaspersky{
+
+display: grid;
+grid-template-columns: 350px  ;
+row-gap: 30px;
+column-gap: 30px;
+width: 100%;
+height: 100%;
+justify-content: center;
+}
+
+
+}
+.data__kaspersky{
+max-width: 464px;
+min-height: 400px;
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+align-items: flex-start;
+text-align: center;
+}
+
+
+
+
+.kaspersky__container h2{
+margin-left: auto;
+margin-right: auto;
+position: relative;
+}
+
+.con__data-mahsolatsazemani{
+margin-left: auto;
+margin-right: auto;
+}
+
+
+.data__kaspersky img{
+
+background-size: auto auto;
+
+}
+
+
+.data__kaspersky-img{
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/Capture\ \(2\).PNG);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+
+.data__kaspersky-img-colud{
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ endpoint\ cloud.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.data__kaspersky-img-office{
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ small\ office\ security\ 8.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.data__kaspersky-img-EDR{
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/EDR\ kaspersky.PNG);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.data__kaspersky-img-kata{
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ of\ kata.PNG);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+
+}
+
+
+.data__kaspersky-img-home{
+
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ multi\ device\ .png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.data__kaspersky-img-home1{
+
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ multi\ device1.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.data__kaspersky-img-home2{
+
+width:100%;
+height: 250px;
+background-image: url(/assets/img/kaspersky/kaspersky\ android\ .png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+border-radius: 20px 20px 0 0 ;
+}
+
+.caption__kaspersky{
+display: flex;
+flex-direction: column;
+column-gap: 20px;
+list-style: none;
+}
+
+
+
+
+.a__kaspersky{
+text-decoration: none;
+color: #00836a;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+
+
+.data__kaspersky-caption{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+}
+
+/*  =====================================  PADVISH  BUSINESS  =========================================  */
+
+
+
+.sec{
+width: 100%;
+min-height:100vh;
+padding-right: 10px;
+margin-left: 10px; ;
+
+}
+
+
+.container__padvish{
+display: flex;
+flex-direction: column;
+row-gap: 40px;
+padding: 30px 30px;
+
+}
+
+
+.img__padvish{
+max-width: 350px;
+height: 170px;
+border-radius: 100%;
+left:0 ;
+top: ;
+position: relative;
+}
+
+.img__padvish img{
+position: relative;
+width: 100%;
+height: 100%;
+border-radius: 10px;
+}
+
+
+.caption__padvish{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 200px;
+background-image: linear-gradient(to bottom, #845ec2, #0076ce, #0081b9, #008592, #00836a);
+flex-direction: column;
+color: white;
+}
+
+
+
+.data__about-padvish{
+display: flex;
+flex-direction: column;
+row-gap: 50px;
+margin-top: 20px;
+text-align: center;
+}
+
+.ul__data-padvish{
+display: grid;
+grid-template-columns: 25% 25% 25% 25%;
+gap: 10px;
+justify-content: center;
+row-gap: 20px;
+}
+
+.ul__data-padvish li{
+display: flex;
+flex-direction: column;
+row-gap: 5px;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+.ul__data-padvish li img{
+object-fit: cover;
+max-width:400px ;
+height: 100px;
+object-position: center;
+}
+
+
+
+
+@media screen and (max-width: 940px){
+.ul__data-padvish{
+display: grid;
+grid-template-columns: 25% 25% 25% ;
+gap: 10px;
+justify-content: center;
+row-gap: 20px;
+}
+}
+
+
+@media screen and (max-width: 767px){
+.ul__data-padvish{
+display: grid;
+grid-template-columns: 50% 50% ;
+gap: 10px;
+justify-content: center;
+row-gap: 20px;
+}
+}
+
+
+@media screen and (max-width: 500px){
+.ul__data-padvish{
+display: grid;
+grid-template-columns: 70% ;
+gap: 10px;
+justify-content: center;
+row-gap: 20px;
+}
+}
+
+
+
+.caption__about-padvish{
+display: grid;
+grid-template-columns: 50% 50% ;
+row-gap: 15px;
+column-gap: 15px;
+justify-content: center;
+width: 100%;
+margin-top: 50px;
+
+}
+@media screen and (max-width: 767px){
+
+.caption__about-padvish{
+display: grid;
+grid-template-columns: 100%  ;
+row-gap: 15px;
+column-gap: 15px;
+justify-content: center;
+width: 100%;
+margin-top: 50px;
+
+}
+}
+
+.caption{
+display: flex;
+flex-direction: row;
+
+}
+
+.caption img{
+width: 25%;
+position: relative;
+right: 0;
+margin-left: 15px;
+height: 60%;
+}
+
+
+.caption div{
+display: block;
+text-align: center;
+}
+
+.caption div h1{
+    text-align: right;
+    }
+
+
+    .caption div p{
+        text-align: right;
+        margin-top: 10px;
+        }
+
+.table__padvish{
+display: flex;
+justify-content: center;
+flex-direction: column;
+row-gap: 30px;
+}
+
+.table__padvish div{
+width: 100%;
+}
+
+.table__data{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.table__data th{
+border-bottom: 1px solid #622697;
+
+}
+.table__data td{
+border: 1px solid #622697;
+padding-right: 10px;
+
+}
+
+
+.ul__padvish{
+width: 100%;
+min-height:80vh;
+display: flex;
+row-gap: 30px;
+flex-direction: column;
+}
+
+.ul__padvish h2{
+position: relative;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.ul__data{
+display: grid;
+grid-template-columns: 50% 50%;
+text-align: right;
+row-gap: 10px;
+column-gap: 30px;
+padding-right: 15px;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+list-style: square;
+}
+
+.ul__data li{
+text-align: right;
+
+}
+
+/*  =================================  PADVISH ANTY CRYPTO  =================================  */
+
+
+.padvish__anticrypto{
+width: 100%;
+margin-top: 40px;
+display: grid;
+grid-template-columns: 40% 40%;
+justify-content: center;
+margin-bottom: 30px;
+padding: 10px 5px;
+}
+
+
+.caption__crypto{
+display: block;
+padding-top: 40px;
+padding-left: 10px;
+}
+.caption__crypto h2{
+margin-bottom: 10px;
+text-align: right;
+right: 40px;
+position: relative;
+
+}
+
+
+.caption__crypto ul{
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+padding-right: 20px;
+list-style: circle;
+}
+
+
+
+@media screen and (max-width: 856px){
+.padvish__anticrypto{
+width: 100%;
+margin-top: 40px;
+display: grid;
+grid-template-columns:  100%;
+justify-content: center;
+margin-bottom: 30px;
+padding: 10px 5px;
+}
+}
+
+.img__crypto{
+width: 100%;
+height: 100%;
+}
+.img__crypto img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+
+
+
+.about__anticrypto{
+width: 100%;
+margin-left: 15px;
+margin-right: 15px;
+}
+
+
+.data__crypto{
+width:100%;
+display: flex;
+flex-direction: row;
+column-gap: 20px;
+justify-content: center;
+padding: 30px 20px;
+
+}
+
+.span__crypto{
+width: 40%;
+padding-right: 40px;
+
+}
+.span__crypto span{
+position: relative;
+top: 30px;
+
+}
+
+@media screen and (max-width: 1000px){
+
+.data__crypto{
+width:100%;
+display: flex;
+flex-direction: column;
+column-gap: 20px;
+justify-content: center;
+padding: 30px 20px;
+align-items: center;
+row-gap: 30px;
+
+}
+.span__crypto{
+width: 60%;
+padding-right: 40px;
+
+}
+.data__crypto img{
+width: 40%;
+
+}
+
+}
+
+@media screen and (max-width: 767px){
+
+.data__crypto{
+width:100%;
+display: flex;
+flex-direction: column;
+column-gap: 20px;
+justify-content: center;
+padding: 0px 10px;
+align-items: center;
+row-gap: 30px;
+
+}
+.span__crypto{
+width: 100%;
+padding-right: 10px;
+
+}
+.data__crypto img{
+width: 50%;
+
+}
+
+}
+/*  ==============================  FORTI NET  =====================================  */
+
+
+
+
+.container__firewall{
+display: flex;
+flex-direction: column;
+row-gap: 30px;
+}
+
+.img__background{
+width: 100%;
+max-height: 350px;
+position: relative;
+top: 0;
+object-fit:cover;
+object-position: center;
+}
+
+
+
+.img__background img{
+width: 100%;
+height: 350px;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+
+.caption__firewall{
+padding: 30px 20px;
+width: 100%;
+display: block;
+}
+
+.caption__firewall h2{
+font-size: 60px;
+text-align: center;
+}
+
+
+.caption__firewall p{
+padding-left: 20px;
+padding-right: 20px;
+
+}
+
+
+.mahsolat__firewall{
+width: 100%;
+min-height: 90vh;
+padding: 20px 30px;
+display: flex;
+flex-direction: row;
+column-gap: 30px;
+justify-content: center;
+
+}
+
+
+.card__mahsolat{
+width: 40%;
+min-height: 700px;
+border: 1px solid #0076ce;
+border-radius: 20px;
+padding: 10px 10px;
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+align-items: center;
+}
+
+.card__mahsolat p{
+padding-left: 10px;
+padding-right: 10px;
+
+}
+
+.card__mahsolat img{
+width:50%  ;
+height: 50%;
+}
+
+
+.more__firewall{
+text-decoration: none;
+color: white;
+width: 50%;
+height: 50px;
+border: 1px solid white;
+transition: all 0.4s;
+padding-top: 10px;
+background-color: #0076ce;
+text-align: center;
+border-radius: 5px;
+}
+
+.more__firewall:hover{
+color: #0076ce;
+border: 1px solid #0076ce;
+background-color: white;
+border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px){
+
+.mahsolat__firewall{
+width: 100%;
+min-height: 90vh;
+padding: 20px 30px;
+display: flex;
+flex-direction: column;
+row-gap: 30px;
+justify-content: center;
+align-items: center;
+}
+
+
+.card__mahsolat{
+width: 90%;
+min-height: 600px;
+border: 1px solid #0076ce;
+border-radius: 20px;
+padding: 10px 10px;
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+align-items: center;
+}
+.more__firewall{
+text-decoration: none;
+color: white;
+width: 90%;
+height: 50px;
+border: 1px solid white;
+transition: all 0.4s;
+padding-top: 10px;
+background-color: #0076ce;
+text-align: center;
+border-radius: 5px;
+}
+
+}
+
+
+
+@media screen and (max-width: 500px){
+
+.mahsolat__firewall{
+width: 100%;
+min-height: 90vh;
+padding: 20px 30px;
+display: flex;
+flex-direction: column;
+row-gap: 30px;
+justify-content: center;
+align-items: center;
+}
+
+
+.card__mahsolat{
+width: 100%;
+min-height: 600px;
+border: 1px solid #0076ce;
+border-radius: 20px;
+padding: 10px 10px;
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+align-items: center;
+}
+
+.more__firewall{
+text-decoration: none;
+color: white;
+width: 100%;
+height: 50px;
+border: 1px solid white;
+transition: all 0.4s;
+padding-top: 10px;
+background-color: #0076ce;
+text-align: center;
+border-radius: 5px;
+}
+
+}
+/*  =======================================  FIREWALL FORTINET  =========================================  */
+
+
+
+.container__fortinet{
+width: 100%;
+display: flex;
+flex-direction: column;
+row-gap: 25px;
+padding: 10px 20px;
+margin-bottom: 20px;
+margin-top: 500px;
+}
+
+.container__fortinet img{
+position: absolute;
+width: 100%;
+height: 450px;
+left: 0;
+top: 0;
+
+}
+
+
+.container__fortinet h1{
+padding-right: 15px;
+
+}
+
+.container__fortinet ul{
+list-style: circle;
+margin-right: 60px;
+text-align: right;
+top: 0;
+}
+
+
+
+.data__caption-left{
+display: flex;
+width: 100%;
+min-height: 250px;
+background-color:#e6f0ff;
+justify-content: left;
+}
+
+
+.data__left{
+text-align: right;
+width: 50%;
+padding: 20px 10px;
+}
+
+.data__caption-right{
+display: flex;
+width: 100%;
+min-height: 250px;
+background-color:#e6f0ff;
+justify-content: right;
+}
+
+
+@media screen and (max-width: 860px){
+
+
+.data__left{
+width: 100%;
+
+}
+
+
+
+
+}
+
+
+/*  ============================================  FIREWALL FORTI WEB  =================================================  */
+
+
+.display__object{
+width: 100%;
+padding-left: 10px;
+padding-right: 10px;
+display: flex;
+flex-direction: row;
+column-gap: 15px;
+}
+
+.object{
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+text-align: right;
+padding: 15px 15px;
+min-height: 200px;
+width: 35%;
+background-color: #e6f0ff;
+align-items: center;
+
+}
+
+
+.object img{
+width: 15%;
+position: relative;
+height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
